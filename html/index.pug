@@ -1,6 +1,8 @@
 head
   meta(name="viewport" content="width=device-width, initial-scale=1.0")
   link(href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet")
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css' rel='stylesheet')
+  link(href='../../css/index.css' rel='stylesheet')
 
 body
   header
@@ -8,8 +10,9 @@ body
       h1.head-header Web Design Solutions
       .cliff-front-left
       .cliff-front-right
+      .mobile-background
   main
-
+    
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
       button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
         span.navbar-toggler-icon
@@ -29,5 +32,9 @@ body
         h1 About Me
         hr
         p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae itaque neque veniam ea doloribus minus excepturi mollitia quam ullam quo? Facere alias, nostrum officia quas voluptates eos aperiam quaerat laudantium maxime quibusdam perspiciatis ratione quisquam ipsa, doloremque, impedit sint neque.
-
-        div
+  
+  script(src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+  script(src='../../javascript/index.js' type="text/javascript")

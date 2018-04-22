@@ -42,25 +42,82 @@ body {
   background-repeat: no-repeat; }
 
 main {
-  width: 1350px;
   margin: auto; }
 
-.main-sect-a {
+ul {
+  list-style: none;
+  padding: 0; }
+
+.about h1, .about h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-shadow: 1px 1px 1px gray; }
+
+.about-section {
+  background-color: #9fbbcc;
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  height: 700px; }
+  grid-template-areas: "profile" "about"; }
 
-.main-sect-a .header-about hr {
+.profile {
+  margin: 1em;
+  grid-area: profile;
+  display: grid block;
+  grid-template-areas: "selfie" "name" "title"; }
+
+.about {
+  grid-area: about;
+  margin: 1em;
+  padding: 1em; }
+
+.profile .selfie {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid black;
+  grid-area: selfie; }
+
+.name {
+  font-size: 30px;
+  margin-top: 5px; }
+
+hr {
+  margin: 0;
+  height: 12px;
   border: 0;
-  height: 2px;
-  width: 360px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
+  box-shadow: inset 0 12px 12px -12px #7a9cc6; }
 
-main .selfie {
-  height: 300px;
-  width: 300px; }
+.skills-list {
+  grid-area: skills;
+  display: grid;
+  grid-template-areas: "langs libs" "pres other";
+  grid-auto-columns: 1fr 1fr; }
 
-.header-about {
-  margin-top: 50px; }
+.langs {
+  grid-area: langs; }
+
+.libraries {
+  grid-area: libs; }
+
+.preprocessors {
+  grid-area: pres; }
+
+.other {
+  grid-area: other; }
+
+.skills-list hr {
+  width: 150px; }
+
+@media only screen and (min-width: 601px) {
+  .about-section {
+    padding: 20px 0px;
+    grid-template-areas: "profile about";
+    grid-auto-columns: 1fr 2fr; }
+
+  .skills-list {
+    grid-area: about;
+    display: grid;
+    grid-template-areas: "langs libs pres other";
+    grid-auto-columns: 1fr 1fr 1fr 1fr; } }
 
 /*# sourceMappingURL=index.css.map */

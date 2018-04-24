@@ -4,6 +4,8 @@
   font-family: "Open Sans", sans-serif; }
 
 body {
+  margin: auto;
+  max-width: 1350px;
   background-color: #F7F0F5; }
 
 .head-sect-a {
@@ -27,7 +29,7 @@ body {
 
 .cliff-front-left {
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   height: 900px;
   width: 100%;
   background-image: url(http://i63.tinypic.com/nxqasn.png);
@@ -35,7 +37,7 @@ body {
 
 .cliff-front-right {
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   height: 900px;
   width: 100%;
   background-image: url(http://i65.tinypic.com/jiz2pj.png);

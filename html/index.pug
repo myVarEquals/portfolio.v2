@@ -25,7 +25,7 @@ body
           li.nav-item
             a(class="nav-link" href="#") Contact
             
-    section.about-section
+    section.about-section.container-fluid
       .profile.text-center
         img.selfie(src='https://www.vinylonthewall.com/wp-content/uploads/2016/09/Male20Stick20Figure.svg')
         .name Roger Baker
@@ -62,15 +62,58 @@ body
               li Photoshop
               li SVG
     
-    section.gallery-section
+    section.gallery-section.text-center
+      
       h1.gallery-header Gallery
-      .gallery-box
-        -for(i = 0; i < 6; i++)
+      // Gallery Wrapper
+      .gallery-box.mx-auto
+          // Items
           .gallery-item
-      .gallery-more-box
-        h1.gallery-more-header Check out my GitHub and Codepen profiles!
-          span GitHub
-          span Codepen
+            .card
+              .card-overlay-dk
+              img.card-img(src='../../images/loaders.png')
+              .card-overlay
+                h5.card-title Pure Css Loaders
+                
+          .gallery-item
+            .card
+              .card-overlay-dk
+              img.card-img(src='#')
+              .card-overlay
+                h5.card-title SVG Draw Animation
+                  
+          .gallery-item
+            .card
+              .card-overlay-dk
+              img.card-img(src='#')
+              .card-overlay
+                h5.card-title Codepen Challenge
+                
+          .gallery-item
+            .card
+              .card-overlay-dk
+              img.card-img(src='#')
+              .card-overlay
+                h5.card-title Birthday Card
+                  
+          .gallery-item
+            .card
+              .card-overlay-dk
+              img.card-img(src='#')
+              .card-overlay
+                h5.card-title Business Site Draft
+                  
+          .gallery-item
+            .card
+              .card-overlay-dk
+              img.card-img(src='#')
+              .card-overlay
+                h5.card-title Business Site Draft #2
+                                      
+    .gallery-more-box
+      h1.gallery-more-header Check out my GitHub and Codepen profiles!
+        span GitHub
+        span Codepen
           
     section.contact-section
       

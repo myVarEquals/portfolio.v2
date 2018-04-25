@@ -5,11 +5,12 @@
 
 body {
   margin: auto;
-  max-width: 1350px;
-  background-color: #F7F0F5; }
+  margin-top: 0; }
 
 .head-sect-a {
+  display: none;
   margin: auto;
+  margin-top: 0;
   overflow: hidden;
   position: relative;
   height: 900px;
@@ -18,7 +19,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 1350px 900px;
-  background-position: center; }
+  background-position: top center; }
   .head-sect-a h1 {
     color: white;
     position: absolute;
@@ -50,13 +51,12 @@ ul {
   list-style: none;
   padding: 0; }
 
-.about h1, .about h5 {
+h1, h5 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   text-shadow: 1px 1px 1px gray; }
 
 .about-section {
-  background-color: #9fbbcc;
   position: relative;
   display: grid;
   grid-template-areas: "profile" "about"; }
@@ -110,16 +110,79 @@ hr {
 .skills-list hr {
   width: 150px; }
 
+.gallery-section {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr; }
+
+.gallery-header {
+  grid-column: 2; }
+
+.gallery-box {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr; }
+
+.gallery-item {
+  text-align: center; }
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 250px; }
+  .card:hover .card-overlay {
+    height: 75px;
+    transition: 1s ease; }
+  .card:hover .card-overlay-dk {
+    opacity: 0.4;
+    transition: 1s ease; }
+  .card:hover .card-title {
+    top: 22px;
+    transition: 1s ease; }
+
+.card-overlay {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+  background-color: #7a9cc6;
+  opacity: 0.7;
+  transition: 1s ease; }
+
+.card-title {
+  position: relative;
+  top: 10px;
+  color: white;
+  opacity: 1;
+  transition: 1s ease; }
+
+.card-overlay-dk {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: 1s ease; }
+
 @media only screen and (min-width: 601px) {
   .about-section {
     padding: 20px 0px;
     grid-template-areas: "profile about";
-    grid-auto-columns: 1fr 2fr; }
+    grid-template-columns: 1fr 2fr; }
 
+  .gallery-box {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px; } }
+@media only screen and (min-width: 901px) {
   .skills-list {
     grid-area: about;
     display: grid;
     grid-template-areas: "langs libs pres other";
-    grid-auto-columns: 1fr 1fr 1fr 1fr; } }
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .gallery-box {
+    grid-template-columns: 1fr 1fr 1fr; } }
+.container-fluid {
+  margin: 0;
+  padding: 0; }
 
 /*# sourceMappingURL=index.css.map */

@@ -65,7 +65,7 @@ h1, h5 {
   grid-template-areas: "profile" "about"; }
 
 .profile {
-  margin: 1em 0;
+  margin: 3em 0;
   padding: 0;
   grid-area: profile;
   display: grid block;
@@ -95,7 +95,8 @@ hr {
   grid-area: skills;
   display: grid;
   grid-template-areas: "langs libs" "pres other";
-  grid-auto-columns: 1fr 1fr; }
+  grid-auto-columns: 1fr 1fr;
+  grid-gap: 10px; }
 
 .langs {
   grid-area: langs; }
@@ -172,11 +173,11 @@ hr {
   .gallery-more p {
     margin: 0; }
 
-.form-control {
-  border-radius: 0 5px 5px 0; }
+.input-group, .form-group {
+  max-width: 500px; }
 
 .form-control {
-  padding: 0; }
+  padding: 0 1em; }
 
 @media only screen and (min-width: 601px) {
   .about-section {

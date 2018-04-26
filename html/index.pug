@@ -1,6 +1,7 @@
 head
   meta(name="viewport" content="width=device-width, initial-scale=1.0")
   link(href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet")
+  link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous")
   link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css' rel='stylesheet')
   link(href='../../css/index.css' rel='stylesheet')
 
@@ -69,53 +70,77 @@ body
       .gallery-box.mx-auto
           // Items
           .gallery-item
-            .card
-              .card-overlay-dk
-              img.card-img(src='../../images/loaders.png')
-              .card-overlay
-                h5.card-title Pure Css Loaders
+            a(href='https://codepen.io/bakecaker/pen/RMqWZG' target='_blank')
+              .card
+                .card-overlay-dk
+                img.card-img(src='../../images/loaders.png')
+                .card-overlay
+                  h5.card-title Pure Css Loaders
                 
           .gallery-item
-            .card
-              .card-overlay-dk
-              img.card-img(src='#')
-              .card-overlay
-                h5.card-title SVG Draw Animation
-                  
+            a(href='https://codepen.io/bakecaker/pen/MVGovj' target='_blank')
+              .card
+                .card-overlay-dk
+                img.card-img(src='#')
+                .card-overlay
+                  h5.card-title SVG Draw Animation
+                    
           .gallery-item
-            .card
-              .card-overlay-dk
-              img.card-img(src='#')
-              .card-overlay
-                h5.card-title Codepen Challenge
+            a(href='https://codepen.io/bakecaker/pen/QmQGqL' target='_blank')
+              .card
+                .card-overlay-dk
+                img.card-img(src='#')
+                .card-overlay
+                  h5.card-title Codepen Challenge
                 
           .gallery-item
-            .card
-              .card-overlay-dk
-              img.card-img(src='#')
-              .card-overlay
-                h5.card-title Birthday Card
+            a(href='https://codepen.io/bakecaker/pen/xpwovz' target='_blank')
+              .card
+                .card-overlay-dk
+                img.card-img(src='#')
+                .card-overlay
+                  h5.card-title Birthday Card
+                    
+          .gallery-item
+            a(href='#' target='_blank')
+              .card
+                .card-overlay-dk
+                img.card-img(src='https://codepen.io/bakecaker/project/editor/AaOkOk')
+                .card-overlay
+                  h5.card-title Business Site Draft
                   
           .gallery-item
-            .card
-              .card-overlay-dk
-              img.card-img(src='#')
-              .card-overlay
-                h5.card-title Business Site Draft
-                  
-          .gallery-item
-            .card
-              .card-overlay-dk
-              img.card-img(src='#')
-              .card-overlay
-                h5.card-title Business Site Draft #2
-                                      
-    .gallery-more-box
-      h1.gallery-more-header Check out my GitHub and Codepen profiles!
-        span GitHub
-        span Codepen
-          
-    section.contact-section
+            a(href='https://codepen.io/bakecaker/pen/vdvxEq?editors=1100' target='_blank')
+              .card
+                .card-overlay-dk
+                img.card-img(src='#')
+                .card-overlay
+                  h5.card-title Business Site Draft #2
+      
+      .gallery-more
+        h5.gallery-more-head More of my work
+        a(href='https://github.com/myVarEquals' target='_blank')
+          p Github
+          i.fab.fa-github
+        a(href='https://codepen.io/bakecaker/' target='_blank')
+          p Codepen
+          i.fab.fa-codepen
+                                                
+    section.contact-section.container-fluid
+      form 
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text
+              i.fas.fa-user
+            input.form-control(type='text' id='name' placeholder='Name')  
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text
+              i.fas.fa-envelope
+            input.form-control(type='text' id='email' placeholder='Email')
+        .form-group
+          textarea.form-control(rows='3' placeholder='Your Message')        
+              
       
                       
   script(src="http://code.jquery.com/jquery-3.3.1.js"

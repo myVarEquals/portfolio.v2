@@ -1,14 +1,23 @@
 * {
   font-family: "Open Sans", sans-serif; }
 
+html {
+  width: 100%; }
+
 body {
+  width: 100%;
   margin: auto;
-  margin-top: 0; }
+  margin-top: 0;
+  color: #29293d; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: white;
+  transition: 1s ease; }
   a:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #b30000;
+    transition: 1s ease; }
 
 .head-sect-a {
   display: none;
@@ -57,22 +66,28 @@ ul {
 h1, h5 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  text-shadow: 1px 1px 1px gray; }
+  color: #a3a3c2; }
+
+h1 {
+  color: #676798; }
 
 .about-section {
+  margin: 4em 0;
   position: relative;
   display: grid;
-  grid-template-areas: "profile" "about"; }
+  grid-template-areas: ". profile ." ". about .";
+  grid-template-columns: 1fr 5fr 1fr; }
 
 .profile {
-  margin: 3em 0;
+  margin: 5em 0;
   padding: 0;
   grid-area: profile;
   display: grid block;
   grid-template-areas: "selfie" "name" "title"; }
 
 .about {
-  grid-area: about; }
+  grid-area: about;
+  width: 100%; }
 
 .profile .selfie {
   height: 200px;
@@ -87,9 +102,8 @@ h1, h5 {
 
 hr {
   margin: 0;
-  height: 12px;
-  border: 0;
-  box-shadow: inset 0 12px 12px -12px #7a9cc6; }
+  height: 1px;
+  border-top: 1px solid black; }
 
 .skills-list {
   grid-area: skills;
@@ -114,11 +128,15 @@ hr {
   width: 150px; }
 
 .gallery-section {
+  padding: 3em 0;
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr; }
+  grid-template-columns: 1fr 5fr 1fr;
+  background-color: #29293d; }
 
 .gallery-header {
-  grid-column: 2; }
+  color: white;
+  grid-column: 2;
+  margin-bottom: 2em; }
 
 .gallery-box {
   grid-column: 2;
@@ -130,6 +148,8 @@ hr {
   text-align: center; }
 
 .card {
+  border: none;
+  border-radius: 0;
   position: relative;
   width: 100%;
   height: 200px; }
@@ -139,24 +159,28 @@ hr {
   .card:hover .card-overlay-dk {
     opacity: 0.4;
     transition: 1s ease; }
-  .card:hover .card-title {
-    top: 22px;
+  .card:hover .title {
+    top: 150px;
+    opacity: 1;
     transition: 1s ease; }
 
 .card-overlay {
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 50px;
-  background-color: #7a9cc6;
+  height: 0px;
+  background-color: #b30000;
   opacity: 0.7;
   transition: 1s ease; }
 
-.card-title {
-  position: relative;
-  top: 10px;
+.title {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
   color: white;
-  opacity: 1;
+  opacity: 0;
   transition: 1s ease; }
 
 .card-overlay-dk {
@@ -173,6 +197,11 @@ hr {
   .gallery-more p {
     margin: 0; }
 
+.gallery-more i {
+  display: inline-block;
+  margin: 0.5em 1em 0 1em;
+  font-size: 40px; }
+
 .input-group, .form-group {
   max-width: 500px; }
 
@@ -181,7 +210,7 @@ hr {
 
 @media only screen and (min-width: 601px) {
   .about-section {
-    padding: 20px 0px;
+    padding: 20px 20px;
     grid-template-areas: "profile about";
     grid-template-columns: 1fr 2fr; }
 

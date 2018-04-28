@@ -132,6 +132,15 @@ hr
   grid-auto-columns: 1fr 1fr
   grid-gap: 10px
 
+.list
+  opacity: 0
+  transform: translateX(-20px)
+  transition: 1.5s ease
+
+  &.skill-appear
+    opacity: 1
+    transform: translateX(0px)
+
 .langs
   grid-area: langs
 
@@ -168,12 +177,22 @@ hr
 .gallery-item
   text-align: center
   opacity: 0
-  transform: translateY(20px)
   transition: 1s ease-in
 
-  &.appear
-    opacity: 1
+
+  &:nth-child(-n+3)
+    transform: translateY(20px)
+
+  &:nth-child(n+4)
     transform: translateY(-20px)
+
+  &.appear-top
+    opacity: 1
+    transform: translateY(0px)
+  &.appear-bottom
+    opacity: 1
+    transform: translateY(0px)
+
 
 .card
   border: none

@@ -11,6 +11,14 @@ $(document).ready(function(){
      'transform' : 'translate(0px, '+ scrolling * 0.65 +'px)'
     });
 
+    if(scrolling > $('.gallery-box').offset().top) {
+      $('.gallery-box .gallery-item').each(function(){
+
+        $('.gallery-box .gallery-item').addClass('appear');
+
+      });
+    }
+
   });
 
 });

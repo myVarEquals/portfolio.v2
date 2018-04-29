@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(window).scroll(function(){
 
     var scrolling = $(this).scrollTop()
-    console.log(scrolling)
+  
     $('.cliff-front-left, .cliff-front-right').css({
      'transform' : 'translate(0px, '+ scrolling * 0.5 +'px)'
     });
@@ -27,8 +27,8 @@ $(document).ready(function(){
   $(window).scroll(function(){
     var scrolling = $(this).scrollTop();
 
-    if(scrolling > $('.gallery-box').offset().top - ($(window).height() / 1.6)) {
-      console.log($('.gallery-box').offset().top);
+    if(scrolling > $('.gallery-box').offset().top - ($(window).height() / 1.2)) {
+      console.log($(window).height());
       $('.gallery-box .gallery-item:nth-child(-n+3)').each(function(){
 
         $('.gallery-box .gallery-item:nth-child(-n+3)').addClass('appear-top');

@@ -7,7 +7,7 @@ head
   link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css' rel='stylesheet')
   link(href='../../css/index.css' rel='stylesheet')
 
-body
+body(data-spy='scroll')
   
   header
     
@@ -16,7 +16,7 @@ body
       .cliff-front-left
       .cliff-front-right
       .mobile-background
-        
+            
   main    
     
     nav.navbar.navbar-expand-lg.navbar-light.bg-light
@@ -25,13 +25,13 @@ body
       .collapse.navbar-collapse#navbarNav
         ul.navbar-nav.ml-auto
           li.nav-item.active
-            a(class="nav-link" href="#") About
+            a(class="nav-link" href="#about-section") About
           li.nav-item
-            a(class="nav-link" href="#") Gallery
+            a(class="nav-link" href="#gallery-section") Gallery
           li.nav-item
-            a(class="nav-link" href="#") Contact
+            a(class="nav-link" href="#contact-section") Contact
             
-    section.about-section.container-fluid
+    section#about-section.container-fluid
       .profile.text-center
         img.selfie(src='https://www.vinylonthewall.com/wp-content/uploads/2016/09/Male20Stick20Figure.svg')
         .name Roger Baker
@@ -68,7 +68,7 @@ body
               li Photoshop
               li SVG
     
-    section.gallery-section.container-fluid.text-center
+    section#gallery-section.container-fluid.text-center
       
       h1.gallery-header Gallery
       // Gallery Wrapper
@@ -129,7 +129,7 @@ body
         a(href='https://codepen.io/bakecaker/' target='_blank')
           i.fab.fa-codepen
                                                 
-    section.contact-section.container-fluid
+    section#contact-section.container-fluid
       
       h1.contact-header Contact
       form 

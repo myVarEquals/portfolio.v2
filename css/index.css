@@ -19,42 +19,24 @@ a {
     color: #b30000;
     transition: 1s ease; }
 
-.head-sect-a {
-  display: none;
-  margin: auto;
-  margin-top: 0;
-  overflow: hidden;
+.header-section {
   position: relative;
-  height: 900px;
-  width: 1350px;
-  background-image: url(http://i67.tinypic.com/2i2a1si.png);
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(../images/owl.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 1350px 900px;
-  background-position: top center; }
-  .head-sect-a h1 {
-    color: white;
-    position: absolute;
-    left: 10%;
-    top: 35%;
-    text-shadow: 3px 3px 10px black;
-    z-index: 9999; }
+  background-position: center;
+  background-size: cover; }
 
-.cliff-front-left {
+.header-overlay {
   position: absolute;
-  bottom: 0;
-  height: 900px;
+  height: inherit;
   width: 100%;
-  background-image: url(http://i63.tinypic.com/nxqasn.png);
-  background-repeat: no-repeat; }
-
-.cliff-front-right {
-  position: absolute;
-  bottom: 0;
-  height: 900px;
-  width: 100%;
-  background-image: url(http://i65.tinypic.com/jiz2pj.png);
-  background-repeat: no-repeat; }
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3); }
 
 main {
   margin: auto; }

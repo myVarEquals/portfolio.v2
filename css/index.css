@@ -5,6 +5,7 @@ html {
   width: 100%; }
 
 body {
+  position: relative;
   width: 100%;
   margin: auto;
   margin-top: 0;
@@ -16,27 +17,66 @@ a {
   transition: 1s ease; }
   a:hover {
     text-decoration: none;
-    color: #b30000;
+    color: #ffcc00;
     transition: 1s ease; }
 
-.header-section {
+header {
+  height: 500px;
+  width: 100%;
   position: relative;
+  overflow: hidden; }
+  header h1 {
+    font-family: "Nothing You Could Do", cursive;
+    color: white;
+    text-shadow: 2px 2px 2px #ffcc00; }
+
+.header-background {
+  z-index: -10;
+  position: absolute;
   height: 500px;
   width: 100%;
   overflow: hidden;
   background-image: url(../images/owl.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: top -200px center;
   background-size: cover; }
 
 .header-overlay {
+  z-index: -9;
   position: absolute;
-  height: inherit;
+  height: 500px;
   width: 100%;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.3); }
+
+.header-wrapper {
+  position: relative;
+  left: 20%;
+  top: 35%; }
+  .header-wrapper .head-owl {
+    position: relative;
+    left: 30px; }
+  .header-wrapper .head-dev {
+    position: relative;
+    left: 60px; }
+
+.navbar {
+  background-color: black !important; }
+
+.navbar-toggler:focus {
+  outline: none; }
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 204, 0, 0.5)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important; }
+
+.nav-item .nav-link {
+  font-family: "Nothing You Could Do", cursive;
+  color: white !important; }
+
+.nav-item .active {
+  color: #ffcc00 !important; }
 
 main {
   margin: auto; }
@@ -52,6 +92,12 @@ h1, h5 {
 
 h1 {
   color: #676798; }
+
+#about-anchor, #gallery-anchor, #contact-anchor {
+  display: block;
+  margin-top: -55px;
+  height: 55px;
+  visibility: hidden; }
 
 #about-section {
   margin: 4em 0;
@@ -121,12 +167,13 @@ hr {
   padding: 3em 0;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  background-color: #29293d; }
+  background-color: black; }
 
 .gallery-header {
   color: white;
   grid-column: 2;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  font-family: "Permanent Marker", cursive; }
 
 .gallery-box {
   grid-column: 2;
@@ -177,7 +224,7 @@ hr {
   width: 100%;
   bottom: 0;
   height: 0px;
-  background-color: #b30000;
+  background-color: #ffcc00;
   opacity: 0.7;
   transition: 1s ease; }
 
@@ -202,6 +249,8 @@ hr {
 .gallery-more {
   grid-column: 2;
   margin: 1em 0; }
+  .gallery-more h5 {
+    color: white; }
   .gallery-more p {
     margin: 0; }
 
@@ -210,28 +259,58 @@ hr {
   margin: 0.5em 1em 0 1em;
   font-size: 40px; }
 
+#contact-section {
+  min-height: 800px;
+  padding: 0 !important; }
+
+form {
+  padding: 0 1em; }
+
+.contact-background {
+  z-index: -10;
+  position: absolute;
+  height: 800px;
+  width: 100%;
+  background-image: url(../images/moon.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover; }
+
+.contact-header {
+  padding: 2em 0 1em 2em;
+  font-family: "Nothing You Could Do", cursive;
+  color: white;
+  text-shadow: 2px 2px 2px #ffcc00; }
+
 .input-group, .form-group {
   max-width: 500px; }
 
+.input-group-text {
+  border: 1px solid #ffcc00;
+  background: black;
+  color: #ffcc00; }
+
 .form-control {
-  padding: 0 1em; }
+  border: 1px solid #ffcc00;
+  padding: 0 4px;
+  background: rgba(0, 0, 0, 0.8); }
 
 @media only screen and (min-width: 601px) {
   #about-section {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 850px;
+    min-height: 600px;
     padding: 20px 20px;
     grid-template-areas: "profile about";
-    grid-template-columns: 1fr 2fr; }
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px; }
 
   .gallery-box {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px; } }
 @media only screen and (min-width: 901px) {
-  .skills-list {
-    grid-area: about;
-    display: grid;
-    grid-template-areas: "langs libs pres other";
-    grid-template-columns: 1fr 1fr 1fr 1fr; }
-
   .gallery-box {
     grid-template-columns: 1fr 1fr 1fr; } }
 

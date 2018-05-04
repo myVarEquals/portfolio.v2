@@ -2,46 +2,41 @@ doctype html
 
 head
   meta(name="viewport" content="width=device-width, initial-scale=1.0")
-  link(href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet")
+  link(href="https://fonts.googleapis.com/css?family=Roboto:300,400|Nothing+You+Could+Do|Permanent+Marker" rel="stylesheet")
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous")
   link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css' rel='stylesheet')
   link(href='../../css/index.css' rel='stylesheet')
 
-body(data-spy='scroll')
+body(data-spy='scroll' data-target='.navbar' data-offset='100')
   
   header
-    
-    section.header-section
-      h1.header-head Nocturnal Developer
-      .header-overlay
-        
-    
-    
-    //- section.head-sect-a
-    //-   h1.head-header Web Design Solutions
-    //-   .cliff-front-left
-    //-   .cliff-front-right
-    //-   .mobile-background
-            
+    .header-background
+    .header-overlay 
+    .header-wrapper
+      h1.head-night Night
+      h1.head-owl Owl
+      h1.head-dev Dev
+                   
   main    
     
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.sticky-top
+      button(class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
         span.navbar-toggler-icon
       .collapse.navbar-collapse#navbarNav
         ul.navbar-nav.ml-auto
-          li.nav-item.active
-            a(class="nav-link" href="#about-section") About
           li.nav-item
-            a(class="nav-link" href="#gallery-section") Gallery
+            a(class="nav-link" href="#about-anchor") About
           li.nav-item
-            a(class="nav-link" href="#contact-section") Contact
-            
+            a(class="nav-link" href="#gallery-anchor") Gallery
+          li.nav-item
+            a(class="nav-link" href="#contact-anchor") Contact
+          
+    span#about-anchor        
     section#about-section.container-fluid
       .profile.text-center
         img.selfie(src='https://www.vinylonthewall.com/wp-content/uploads/2016/09/Male20Stick20Figure.svg')
         .name Roger Baker
-        .title Web Developer
+        .web Web Developer
       .about  
         h1.about-head About Me
         hr
@@ -73,7 +68,8 @@ body(data-spy='scroll')
               li Git and Github
               li Photoshop
               li SVG
-    
+              
+    span#gallery-anchor 
     section#gallery-section.container-fluid.text-center
       
       h1.gallery-header Gallery
@@ -134,9 +130,11 @@ body(data-spy='scroll')
           i.fab.fa-github
         a(href='https://codepen.io/bakecaker/' target='_blank')
           i.fab.fa-codepen
-                                                
+            
+    span#contact-anchor                                           
     section#contact-section.container-fluid
       
+      .contact-background
       h1.contact-header Contact
       form 
         .input-group.mb-3

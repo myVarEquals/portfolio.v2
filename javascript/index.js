@@ -1,5 +1,21 @@
 $(document).ready(function(){
 
+  $("a").on('click', function(event) {
+
+      if (this.hash !== "") {
+
+        event.preventDefault();
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+
+    });
+
   $(window).scroll(function(){
 
     var scrolling = $(this).scrollTop()
@@ -7,7 +23,7 @@ $(document).ready(function(){
     // $('.cliff-front-left, .cliff-front-right').css({
     //  'transform' : 'translate(0px, '+ scrolling * 0.5 +'px)'
     // });
-    $('.header-head').css({
+    $('.header-wrapper').css({
      'transform' : 'translate(0px, '+ scrolling * 0.65 +'px)'
     });
 
@@ -41,5 +57,6 @@ $(document).ready(function(){
       });
     }
   });
+
 
 });

@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400|Nothing+You+Could+Do|Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
   <link href="../../css/index.css" rel="stylesheet">
 </head>
-<body data-spy="scroll">
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
   <header>
-    <section class="header-section">
-      <h1 class="header-head">Nocturnal Developer</h1>
-      <div class="header-overlay"></div>
-    </section>
+    <div class="header-background"></div>
+    <div class="header-overlay"> </div>
+    <div class="header-wrapper">
+      <h1 class="head-night">Night</h1>
+      <h1 class="head-owl">Owl</h1>
+      <h1 class="head-dev">Dev</h1>
+    </div>
   </header>
   <main>   
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a class="nav-link" href="#about-section">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery-section">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-section">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about-anchor">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery-anchor">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact-anchor">Contact</a></li>
         </ul>
       </div>
-    </nav>
+    </nav><span id="about-anchor">       </span>
     <section class="container-fluid" id="about-section">
       <div class="profile text-center"><img class="selfie" src="https://www.vinylonthewall.com/wp-content/uploads/2016/09/Male20Stick20Figure.svg">
         <div class="name">Roger Baker</div>
-        <div class="title">Web Developer</div>
+        <div class="web">Web Developer</div>
       </div>
       <div class="about"> 
         <h1 class="about-head">About Me</h1>
@@ -70,7 +73,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section><span id="gallery-anchor"> </span>
     <section class="container-fluid text-center" id="gallery-section">
       <h1 class="gallery-header">Gallery</h1>
       <!-- Gallery Wrapper-->
@@ -116,8 +119,9 @@
       <div class="gallery-more">
         <h5 class="gallery-more-head">More of my work</h5><a href="https://github.com/myVarEquals" target="_blank"><i class="fab fa-github"></i></a><a href="https://codepen.io/bakecaker/" target="_blank"><i class="fab fa-codepen"></i></a>
       </div>
-    </section>
+    </section><span id="contact-anchor">                                          </span>
     <section class="container-fluid" id="contact-section">
+      <div class="contact-background"></div>
       <h1 class="contact-header">Contact</h1>
       <form> 
         <div class="input-group mb-3">

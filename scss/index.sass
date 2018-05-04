@@ -14,6 +14,7 @@ html
   width: 100%
 
 body
+  position: relative
   width: 100%
   margin: auto
   margin-top: 0
@@ -29,11 +30,23 @@ a
   transition: 1s ease
   &:hover
     text-decoration: none
-    color: $dkred
+    color: rgb(255, 204, 0)
     transition: 1s ease
 
-.header-section
+header
+  height: 500px
+  width: 100%
   position: relative
+  overflow: hidden
+
+  & h1
+    font-family: 'Nothing You Could Do', cursive
+    color: white
+    text-shadow: 2px 2px 2px #ffcc00
+
+.header-background
+  z-index: -10
+  position: absolute
   height: 500px
   width: 100%
   overflow: hidden
@@ -41,61 +54,48 @@ a
     image: url(../images/owl.jpg)
     repeat: no-repeat
     attachment: fixed
-    position: center
+    position: top -200px center
     size: cover
 
 .header-overlay
+  z-index: -9
   position: absolute
-  height: inherit
+  height: 500px
   width: 100%
   top: 0
   left: 0
   background:
     color: rgba(0, 0, 0, .3)
 
+.header-wrapper
+  position: relative
+  left: 20%
+  top: 35%
 
-// .head-sect-a
-//   display: none
-//   margin: auto
-//   margin-top: 0
-//   overflow: hidden
-//   position: relative
-//   height: 900px
-//   width: 1350px
-//   background:
-//     image: url(http://i67.tinypic.com/2i2a1si.png)
-//     repeat: no-repeat
-//     attachment: fixed
-//     size: 1350px 900px
-//     position: top center
-//
-//   & h1
-//       color: white
-//       position: absolute
-//       left: 10%
-//       top: 35%
-//       text-shadow: 3px 3px 10px black
-//       z-index: 9999
-//
-// .cliff-front-left
-//   position: absolute
-//   bottom: 0
-//   height: 900px
-//   width: 100%
-//   background:
-//     image: url(http://i63.tinypic.com/nxqasn.png)
-//     repeat: no-repeat
-//
-//
-// .cliff-front-right
-//   position: absolute
-//   bottom: 0
-//   height: 900px
-//   width: 100%
-//   background:
-//     image: url(http://i65.tinypic.com/jiz2pj.png)
-//     repeat: no-repeat
+  & .head-owl
+    position: relative
+    left: 30px
 
+  & .head-dev
+    position: relative
+    left: 60px
+
+.navbar
+  background:
+    color: black !important
+
+.navbar-toggler:focus
+  outline: none
+
+.navbar-toggler-icon
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 204, 0, 0.5)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important
+
+.nav-item .nav-link
+  font-family: 'Nothing You Could Do', cursive
+  color: white !important
+
+.nav-item .active
+    color: rgb(255, 204, 0) !important
 
 
 main
@@ -112,6 +112,12 @@ h1, h5
 
 h1
   color: rgb(103, 103, 152)
+
+#about-anchor, #gallery-anchor, #contact-anchor
+  display: block
+  margin-top: -55px
+  height: 55px
+  visibility: hidden
 
 #about-section
   margin: 4em 0
@@ -142,6 +148,7 @@ h1
 .name
   font-size: 30px
   margin-top: 5px
+
 
 hr
   margin: 0
@@ -184,12 +191,14 @@ hr
   display: grid
   grid-template-columns: 1fr 5fr 1fr
   background:
-    color: rgb(41, 41, 61)
+    color: black
 
 .gallery-header
   color: white
   grid-column: 2
   margin-bottom: 2em
+  font-family: 'Permanent Marker', cursive
+
 
 .gallery-box
   grid-column: 2
@@ -248,7 +257,7 @@ hr
   width: 100%
   bottom: 0
   height: 00px
-  background-color: $dkred
+  background-color: rgb(255, 204, 0)
   opacity: 0.7
   transition: 1s ease
 
@@ -274,6 +283,9 @@ hr
   grid-column: 2
   margin: 1em 0
 
+  & h5
+    color: white
+
   & p
     margin: 0
 
@@ -282,19 +294,56 @@ hr
   margin: 0.5em 1em 0 1em
   font-size: 40px
 
+#contact-section
+  min-height: 800px
+  padding: 0 !important
+
+form
+  padding: 0 1em
+
+.contact-background
+  z-index: -10
+  position: absolute
+  height: 800px
+  width: 100%
+  background:
+    image: url(../images/moon.jpg)
+    repeat: no-repeat
+    attachment: fixed
+    position: bottom center
+    size: cover
+
+.contact-header
+  padding: 2em 0 1em 2em
+  font-family: 'Nothing You Could Do', cursive
+  color: white
+  text-shadow: 2px 2px 2px #ffcc00
+
 .input-group, .form-group
   max-width: 500px
 
+.input-group-text
+  border: 1px solid #ffcc00
+  background: black
+  color: #ffcc00
+
 .form-control
-  padding: 0 1em
+  border: 1px solid #ffcc00
+  padding: 0 4px
+  background: rgba(0, 0, 0, .8)
 
 
 @media only screen and (min-width: 601px)
 
   #about-section
+    margin: auto
+    margin-top: 100px
+    max-width: 850px
+    min-height: 600px
     padding: 20px 20px
     grid-template-areas: "profile about"
     grid-template-columns: 1fr 2fr
+    grid-gap: 30px
 
   .gallery-box
     grid-template-columns: 1fr 1fr
@@ -305,11 +354,11 @@ hr
 
 @media only screen and (min-width: 901px)
 
-  .skills-list
-    grid-area: about
-    display: grid
-    grid-template-areas: "langs libs pres other"
-    grid-template-columns: 1fr 1fr 1fr 1fr
+  // .skills-list
+  //   grid-area: about
+  //   display: grid
+  //   grid-template-areas: "langs libs pres other"
+  //   grid-template-columns: 1fr 1fr 1fr 1fr
 
   .gallery-box
     grid-template-columns: 1fr 1fr 1fr

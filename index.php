@@ -1,4 +1,4 @@
-<?php 
+<?php
 
   //Initializing message variables for pass/fail submit
   $alertMessage = '';
@@ -13,11 +13,12 @@
 
     //Check if all fields hold data
     if(!empty($name) && !empty($email) && !empty($company) && !empty($message)) {
+      //Pass all fields have data
       //Test for valid Email address
       if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-        //Invalid Email`
+        //Invalid Email
         $alertMessage = 'Please enter valid email';
-        $alertMessageClass = 'formfail'; //Define this in css with class!!!
+        $alertMessageClass = 'alert-danger';
       } else {
         //Valid Email
         //Where to
@@ -25,22 +26,33 @@
         //Subject for email
         $subject = 'Contact Request From '.$name;
         //Body for email
-        $body = '<h2>Contact Request</h2>
-                 <h4>Name</h4><p>'.$name.'</p>
-                 <h4>Email</h4><p>'.$email.'</p>
-                 <h4>Company</h4><p>'.$company.'</p>
-                 <h4>Message</h4><p>'.$message.'</p>
-        ';
+        $body = "<html><body>";
+        $body .= '<h2>Contact Request</h2>';
+        $body .= '<h4>Name</h4><p>'.$name.'</p>';
+        $body .= '<h4>Email</h4><p>'.$email.'</p>';
+        $body .= '<h4>Company</h4><p>'.$company.'</p>';
+        $body .= '<h4>Message</h4><p>'.$message.'</p>';
+        $body .= '</body></html>';
         //Headers for email
-        $headers = 'MIME-Version: 1.0' .'\r\n';
+
+        $headers = 'MIME-Version: 1.0' . '\r\n';
         $headers .= 'Content-Type:text/html;charset=UTF-8' . '\r\n';
-        $headers .= 'From: ' .$name. '<'.$email.'>' . '\r\n';
+
 
         if(mail($toEmail, $subject, $body, $headers)) {
+          //Email sent
           $alertMessage = 'Success!';
-          $alertMessageClass
+          $alertMessageClass = 'alert-success';
+        } else {
+          $alertMessage = 'Email failed to send';
+          $alertMessageClass = 'alert-danger';
         }
       }
+    } else {
+      //Fail
+      $alertMessage = 'Please fill out all fields!';
+      $alertMessageClass = 'alert-danger';
+
     }
 
 
@@ -172,6 +184,9 @@
       </div>
     </section><span id="contact-anchor">                                          </span>
     <section class="container-fluid" id="contact-section">
+      <?php if($alertMessage != ''): ?>
+        <div class='alert <?php echo $alertMessageClass; ?>'><?php echo $alertMessage; ?></div>
+      <?php endif; ?>
       <div class="contact-background"></div>
       <h1 class="contact-header">Contact</h1>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">

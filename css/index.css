@@ -266,17 +266,6 @@ hr {
 form {
   padding: 0 1em; }
 
-.contact-background {
-  z-index: -10;
-  position: absolute;
-  height: 800px;
-  width: 100%;
-  background-image: url(../images/moon.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom center;
-  background-size: cover; }
-
 .contact-header {
   padding: 2em 0 1em 2em;
   font-family: "Nothing You Could Do", cursive;
@@ -286,15 +275,8 @@ form {
 .input-group, .form-group {
   max-width: 500px; }
 
-.input-group-text {
-  border: 1px solid #ffcc00;
-  background: black;
-  color: #ffcc00; }
-
 .form-control {
-  border: 1px solid #ffcc00;
-  padding: 0 4px;
-  background: rgba(0, 0, 0, 0.8); }
+  padding: 0 4px; }
 
 @media only screen and (min-width: 601px) {
   #about-section {

@@ -8,11 +8,11 @@
   if(filter_has_var(INPUT_POST, 'submit')) {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
-    $company = htmlspecialchars($_POST['company']);
+    $msgSubject = htmlspecialchars($_POST['msgSubject']);
     $message = htmlspecialchars($_POST['message']);
 
     //Check if all fields hold data
-    if(!empty($name) && !empty($email) && !empty($company) && !empty($message)) {
+    if(!empty($name) && !empty($email) && !empty($msgSubject) && !empty($message)) {
       //Pass all fields have data
       //Test for valid Email address
       if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
@@ -26,17 +26,29 @@
         //Subject for email
         $subject = 'Contact Request From '.$name;
         //Body for email
-        $body = "<html><body>";
-        $body .= '<h2>Contact Request</h2>';
-        $body .= '<h4>Name</h4><p>'.$name.'</p>';
-        $body .= '<h4>Email</h4><p>'.$email.'</p>';
-        $body .= '<h4>Company</h4><p>'.$company.'</p>';
-        $body .= '<h4>Message</h4><p>'.$message.'</p>';
-        $body .= '</body></html>';
+        $body = '
+          <html>
+            <head>
+              <title>Contact Request</title>
+            </head>
+            <body>
+              <h2>Contact Request</h2>
+              <p><strong>Name:</strong> '.$name.'</p>
+              <p><strong>Email:</strong> '.$email.'</p>
+              <hr>
+              <p><strong>Subject:</strong> '.$msgSubject.'</p>
+              <p><strong>Message:</strong><br>'.$message.'</p>
+            </body>
+          </html>
+          ';
+
         //Headers for email
 
-        $headers = 'MIME-Version: 1.0' . '\r\n';
-        $headers .= 'Content-Type:text/html;charset=UTF-8' . '\r\n';
+        $headers = 'From: Night Owl Dev _mainaccount@nightowldeveloper.com' . "\r\n" .
+          'Reply-To: _mainaccount@nightowldeveloper.com' . "\r\n" .
+          'X-Mailer: PHP/' . phpversion() . "\r\n" .
+          'Content-Type: text/html; charset=UTF-8';
+
 
 
         if(mail($toEmail, $subject, $body, $headers)) {
@@ -67,7 +79,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400|Nothing+You+Could+Do|Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
-  <link href="../../css/index.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <title>Night Owl Dev</title>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="100">
   <header>
@@ -187,7 +200,6 @@
       <?php if($alertMessage != ''): ?>
         <div class='alert <?php echo $alertMessageClass; ?>'><?php echo $alertMessage; ?></div>
       <?php endif; ?>
-      <div class="contact-background"></div>
       <h1 class="contact-header">Contact</h1>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <div class="input-group mb-3">
@@ -200,7 +212,7 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-building"></i></span></div>
-          <input class="form-control" type="text" name="company" value="<?php echo isset($_POST['company']) ? $company : ''; ?>" id="company" placeholder="Company">
+          <input class="form-control" type="text" name="msgSubject" value="<?php echo isset($_POST['msgSubject']) ? $msgSubject : ''; ?>" id="msgSubject" placeholder="Subject">
         </div>
         <div class="form-group">
           <textarea class="form-control" rows="3" name='message' placeholder="Your Message"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>

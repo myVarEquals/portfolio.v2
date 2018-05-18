@@ -104,7 +104,7 @@
       </div>
     </nav><span id="about-anchor">       </span>
     <section class="container-fluid" id="about-section">
-      <div class="profile text-center"><img class="selfie" src="https://www.vinylonthewall.com/wp-content/uploads/2016/09/Male20Stick20Figure.svg">
+      <div class="profile text-center"><img class="selfie" src="http://i67.tinypic.com/20sxirm.png">
         <div class="name">Roger Baker</div>
         <div class="web">Web Developer</div>
       </div>

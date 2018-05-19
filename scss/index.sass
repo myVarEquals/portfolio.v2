@@ -53,8 +53,7 @@ header
   background:
     image: url(../images/owl.jpg)
     repeat: no-repeat
-    attachment: fixed
-    position: top -200px center
+    position: top center
     size: cover
 
 .header-overlay
@@ -341,6 +340,19 @@ form
 
 
 @media only screen and (min-width: 601px)
+
+  .header-background
+    z-index: -10
+    position: absolute
+    height: 500px
+    width: 100%
+    overflow: hidden
+    background:
+      image: url(../images/owl.jpg)
+      repeat: no-repeat
+      attachment: fixed
+      position: top -200px center
+      size: cover
 
   #about-section
     margin: auto

@@ -196,29 +196,28 @@
         <h5 class="gallery-more-head">More of my work</h5><a href="https://github.com/myVarEquals" target="_blank"><i class="fab fa-github"></i></a><a href="https://codepen.io/bakecaker/" target="_blank"><i class="fab fa-codepen"></i></a>
       </div>
     </section><span id="contact-anchor">                                          </span>
-    <section class="container-fluid" id="contact-section">
+    <section class="container-fluid text-center" id="contact-section">
       <?php if($alertMessage != ''): ?>
         <div class='alert <?php echo $alertMessageClass; ?>'><?php echo $alertMessage; ?></div>
       <?php endif; ?>
       <h1 class="contact-header">Contact</h1>
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
-          <input class="form-control" type="text" name="name" value="<?php echo isset($_POST['name']) ? $name : ''; ?>" id="name" placeholder="Name">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-envelope"></i></span></div>
-          <input class="form-control" type="text" name="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" id="email" placeholder="Email">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-building"></i></span></div>
-          <input class="form-control" type="text" name="msgSubject" value="<?php echo isset($_POST['msgSubject']) ? $msgSubject : ''; ?>" id="msgSubject" placeholder="Subject">
-        </div>
-        <div class="form-group">
-          <textarea class="form-control" rows="3" name='message' placeholder="Your Message"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
-        </div>
-        <button type="submit" name ="submit">Submit</button>
-      </form>
+      <div class='row justify-content-center'>
+        <form action="#contact-anchor" method="POST">
+          <div class="input-group mb-3">
+            <input class="form-control" type="text" name="name" value="<?php echo isset($_POST['name']) ? $name : ''; ?>" id="name" placeholder="Name">
+          </div>
+          <div class="input-group mb-3">
+            <input class="form-control" type="text" name="email" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" id="email" placeholder="Email">
+          </div>
+          <div class="input-group mb-3">
+            <input class="form-control" type="text" name="msgSubject" value="<?php echo isset($_POST['msgSubject']) ? $msgSubject : ''; ?>" id="msgSubject" placeholder="Subject">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="3" name='message' placeholder="Your Message"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
+          </div>
+          <button type="submit" name ="submit">Submit</button>
+        </form>
+      <div>
     </section>
     <section id='footer-section'>
       <div class='footer'>

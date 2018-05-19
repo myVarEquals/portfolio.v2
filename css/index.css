@@ -38,8 +38,7 @@ header {
   overflow: hidden;
   background-image: url(../images/owl.jpg);
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top -200px center;
+  background-position: top center;
   background-size: cover; }
 
 .header-overlay {
@@ -299,6 +298,18 @@ form {
     transform: translate(-50%, -50%); }
 
 @media only screen and (min-width: 601px) {
+  .header-background {
+    z-index: -10;
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(../images/owl.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top -200px center;
+    background-size: cover; }
+
   #about-section {
     margin: auto;
     margin-top: 100px;

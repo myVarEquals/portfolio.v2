@@ -264,19 +264,39 @@ hr {
   padding: 0 !important; }
 
 form {
-  padding: 0 1em; }
+  padding: 0 1em;
+  min-width: 300px !important;
+  max-width: 600px !important; }
 
 .contact-header {
-  padding: 2em 0 1em 2em;
+  padding: 2em 0;
   font-family: "Nothing You Could Do", cursive;
   color: white;
-  text-shadow: 2px 2px 2px #ffcc00; }
-
-.input-group, .form-group {
-  max-width: 500px; }
+  text-shadow: 2px 2px 1px black; }
 
 .form-control {
   padding: 0 4px; }
+
+#footer-section {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding: 0;
+  margin: 0; }
+
+.footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80px;
+  background: black;
+  color: white; }
+  .footer h3 {
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 @media only screen and (min-width: 601px) {
   #about-section {

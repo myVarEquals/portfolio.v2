@@ -115,8 +115,6 @@
           I am a self taught web developer located in southern New Jersey.
           Problem solving is natural and intriguing to me, and I love a good logic challenge.
           My interests in web development include UI/UX design, graphic design/editting, and helping others in getting started on the path I began on.
-          In my free time at home I enjoy reading and watching code tutorials, playing strategy games like chess, and cooking delicious meals.
-          During the warmer months I like to hike, fish, and learn general wilderness survival techniques.
         </p>
         <div class="skills-list">
           <div class="list langs">

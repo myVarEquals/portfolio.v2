@@ -329,5 +329,8 @@ form {
 @media only screen and (min-width: 901px) {
   .gallery-box {
     grid-template-columns: 1fr 1fr 1fr; } }
+@media only screen and (min-width: 1800px) {
+  .header-background {
+    background-position: top -350px center; } }
 
 /*# sourceMappingURL=index.css.map */
